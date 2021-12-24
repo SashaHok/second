@@ -1,0 +1,78 @@
+<!doctype html>
+ <html> 
+  <head>
+   <meta charset="utf-8">
+   <title>Project number Second</title>
+   <style>
+     body {
+       position: relative;
+       padding: 50px;
+     }
+     #a , #b , #c , #d {
+       position: absolute;
+        width: 200px;
+        height: 200px;
+    }  
+
+    #a {
+        top: 0;
+        left: 0;
+        background-color: red;
+       }
+     #a_1 {position: absolute; width: 50px; height: 25px; background-color: yellow;}  
+    #b {
+        top: 200px; 
+        left: 200px;
+        background-color: green;
+       }
+     #b_1 {position: absolute; width: 50px; height: 25px; background-color: yellow;}       
+    #c {
+        top: 400px;
+        left: 400px;
+        background-color: red;
+       }
+     #c_1 {position: absolute; width: 50px; height: 25px; background-color: yellow;}    
+     #d {
+        top: 200px;
+        left: 0;
+        background-color: greenyellow;
+       }
+     #d_1 {position: absolute; width: 50px; height: 25px; background-color: yellow;}    
+   </style>
+  </head>
+
+  <body>
+   <div id="a"><div id="a_1">a</div></div>
+   <div id="b"><div id="b_1">b</div></div>
+   <div id="c"><div id="c_1">c</div></div>
+   <div id="d"><div id="d_1">d</div></div>
+  </body>
+
+	<script>
+		const d = document.getElementById('d');
+    
+    function elephantMove (e) {
+      const target = e.target;
+      const style = window.getComputedStyle(target);
+      const positionTop = style.top;
+      const positionLeft = style.left;
+
+      if (positionTop !== '0px') { 
+        target.style.top = '0px';
+      } else {
+        target.style.top = '200px';
+      }
+
+      if (positionLeft !== '0px') {
+        target.style.left = '0px';
+      } else {
+        target.style.left = '200px';
+      }
+
+      // console.log('1', style);
+    }
+
+    d.addEventListener('click', elephantMove);
+	</script>
+ </html>   
+
